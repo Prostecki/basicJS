@@ -8,6 +8,7 @@ const names = ['Анна', 'Дмитрий', 'Екатерина', 'Иван', '
 
 const verbs = ['Бежать', 'Смотреть', 'Говорить', 'Слушать', 'Петь', 'Читать', 'Рисовать', 'Учить', 'Думать', 'Играть'];
 
+
 let randomNouns = Math.floor(Math.random() * nouns.length);
 let randomAdj = Math.floor(Math.random() * adjectives.length);
 let randomAdverbs = Math.floor(Math.random() * adverbs.length);
@@ -19,4 +20,12 @@ console.log(nouns[randomNouns]);
 
 //задан шаблон типа "{прил} {собс} {глаг} {прил} {сущ} и затем {глаг} {сущ}"
 
-console.log(adjectives[randomAdj] + " " + names[randomNames] + " " + verbs[randomVerbs] + " " + adjectives[randomAdj] + " " + nouns[randomNouns] + " и затем" + " " + verbs[randomVerbs] + " " + nouns[randomNouns]);
+let adj = adjectives[randomAdj];
+let smthName = names[randomNames];
+let vrbs = verbs[randomVerbs];
+let smthNouns = nouns[randomNouns];
+
+
+let tmpl = adj + smthName + vrbs + adj + smthNouns + " и затем " + vrbs + smthNouns;
+
+console.log(tmpl);
