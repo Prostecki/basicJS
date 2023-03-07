@@ -26,6 +26,5 @@ let vrbs = verbs[randomVerbs];
 let smthNouns = nouns[randomNouns];
 
 
-let tmpl = adj + smthName + vrbs + adj + smthNouns + " и затем " + vrbs + smthNouns;
-
+let tmpl = `${adj} ${smthName} ${vrbs} ${adj} ${smthName} и затем ${vrbs} ${smthName}`;
 console.log(tmpl);
