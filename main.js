@@ -16,9 +16,7 @@ let randomNames = Math.floor(Math.random() * names.length);
 let randomVerbs = Math.floor(Math.random() * verbs.length);
 
 
-console.log(nouns[randomNouns]);
-
-//задан шаблон типа "{прил} {собс} {глаг} {прил} {сущ} и затем {глаг} {сущ}"
+// console.log(nouns[randomNouns]);
 
 let adj = adjectives[randomAdj];
 let smthName = names[randomNames];
@@ -26,5 +24,20 @@ let vrbs = verbs[randomVerbs];
 let smthNouns = nouns[randomNouns];
 
 
-let tmpl = `${adj} ${smthName} ${vrbs} ${adj} ${smthName} и затем ${vrbs} ${smthName}`;
-console.log(tmpl);
+// let tmpl = `${adj} ${smthName} ${vrbs} ${adj} ${smthName} и затем ${vrbs} ${smthName}`;
+let aa =  `{прил} {собс} {глаг} {прил} {сущ} и затем {глаг} {сущ}`;
+
+
+
+// console.log(tmpl);
+
+
+// let aa =  `${adj} ${smthName} ${verb} ${adj} ${nouns} и затем ${verb} ${nouns}`;
+
+console.log(aa.replace("{прил}", adj)
+              .replace("{собс}", smthName)
+              .replace("{глаг}", vrbs)
+              .replace("{прил}", adj)
+              .replace("{сущ}", smthNouns)
+              .replace("{глаг}", vrbs)
+              .replace("{сущ}", smthNouns));
