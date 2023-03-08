@@ -5,12 +5,17 @@ let nouns = ["кот", "дом", "человек", "автомобиль", "го
 let verbs = ["бежать", "прыгать", "петь", "играть", "читать", "писать", "рисовать", "разговаривать", "учиться", "работать"];
 let properNouns = ["Петя", "Катя", "Вася", "Маша", "Аня", "Саша", "Иван", "Лена", "Артем", "Света"];
 
+const randomNoun = rmdValue(nouns);
+const randoAdjective = rmdValue(adjectives);
+const randomVerb = rmdValue(verbs);
+const randomProperNoun = rmdValue(properNouns);
+
 function fillTemplate(template) {
   // Заменяем шаблонные подстроки на соответствующие значения из массивов
-  let filled = template.replace(/\{прил\}/g, () => adjectives[Math.floor(Math.random() * adjectives.length)])
-                      .replace(/\{собс\}/g, () => properNouns[Math.floor(Math.random() * properNouns.length)])
-                      .replace(/\{глаг\}/g, () => verbs[Math.floor(Math.random() * verbs.length)])
-                      .replace(/\{сущ\}/g, () => nouns[Math.floor(Math.random() * nouns.length)]);
+  let filled = template.replace(/\{прил\}/g, randomNoun)
+                      .replace(/\{собс\}/g, randomProperNoun)
+                      .replace(/\{глаг\}/g, randomVerb)
+                      .replace(/\{сущ\}/g, randomNoun);
   
   return filled;
 }
@@ -18,3 +23,8 @@ function fillTemplate(template) {
 // Пример вызова функции
 let result = fillTemplate(aa);
 console.log(result);
+
+function rmdValue(array) {
+   const randomIndex = Math.floor(Math.random() * array.length);
+   return array[randomIndex];
+}
